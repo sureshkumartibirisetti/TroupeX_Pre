@@ -57,10 +57,10 @@
       border-color: rgba(59, 130, 246, 0.3);
     }
     
-    .creative-title-animate {
+    /* .creative-title-animate {
       opacity: 0;
       animation: creativeSlideIn 0.8s ease-out forwards;
-    }
+    } */
     
     @keyframes creativeSlideIn {
       0% {
@@ -90,10 +90,10 @@
       50% { filter: hue-rotate(90deg); }
     }
     
-    .fade-in-up {
+    /* .fade-in-up {
       opacity: 0;
       animation: fadeInUp 1s ease-out forwards;
-    }
+    } */
     
     @keyframes fadeInUp {
       0% {
@@ -230,7 +230,7 @@
     }
     .gradient-wave {
       font-family: 'Montserrat', sans-serif;
-      color: #5381cb;
+      /* color: #5381cb; */
     background: linear-gradient(
       270deg,
       #6b97ff,
@@ -286,11 +286,11 @@
         <div class="space-y-8">
           <div class="text-6xl md:text-6xl lg:text-7xl xl:text-9xl font-bold leading-tight text-white mobile-title gradient-wave" id="animatedTitle"></div>
           
-          <p class="text-gray-300 text-lg md:text-xl max-w-2xl fade-in-up" style="animation-delay: 1.2s;">
+          <p class="text-gray-300 text-lg md:text-xl max-w-2xl fade-in-up" style="animation-delay: 0.5s;">
               Not everyone gets in. An invite-only app for film professionals, creators, and visionaries where the best opportunities and collaborations are already happening.         
          </p>
           
-          <div class="flex flex-col sm:flex-row gap-6 mt-8 fade-in-up" style="animation-delay: 1.5s;">
+          <div class="flex flex-col sm:flex-row gap-6 mt-8 fade-in-up" style="animation-delay: 0.5s;">
             <div class="flex items-center gap-3">
               <div class="w-3 h-3 bg-blue-500 rounded-full animate-ping"></div>
               <span class="text-gray-300 font-medium">Early access guaranteed</span>
@@ -321,7 +321,7 @@
             </div>
 
             <div>
-              <label class="block text-gray-300 text-sm font-semibold mb-3" for="email">Email Address</label>
+              <label class="block text-gray-300 text-sm font-semibold mb-3" for="email">Email Address or Mobile Number</label>
               <input id="email" name="email" type="email" required
                      class="creative-input w-full px-4 py-4 bg-gray-800/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
                      placeholder="your.email@example.com or mobile number" />
@@ -380,7 +380,7 @@
             </div>
 
             <div>
-              <label class="block text-gray-300 text-sm font-semibold mb-3" for="location">Location</label>
+              <label class="block text-gray-300 text-sm font-semibold mb-3" for="location">Place</label>
               <input id="location" name="location" type="text" required
                      class="creative-input w-full px-4 py-4 bg-gray-800/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
                      placeholder="Place" />
@@ -424,7 +424,7 @@
 <script>
 const CONFIG = {
   GAS_URL: 'https://script.google.com/macros/s/AKfycbxu4WMjUJiu51xZTrL8aMS9Z5FO5fOXQnVHdkp6cviJM2Ibu6Vd2t_oLXqFy6Z9awCwnA/exec',
-  TITLE: 'Your next big break is here',
+  TITLE: 'Your next big break is here .',
   LETTER_DELAY_MS: 150
 };
 
