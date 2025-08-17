@@ -229,6 +229,8 @@
       box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
     }
     .gradient-wave {
+      font-family: 'Montserrat', sans-serif;
+      color: #5381cb;
     background: linear-gradient(
       270deg,
       #6b97ff,
@@ -241,7 +243,7 @@
     -webkit-background-clip: text;
     
     background-clip: text;
-    color: transparent;
+    /* color: transparent; */
     animation: waveGradient 8s ease infinite;
   }
 
@@ -264,7 +266,7 @@
   min-height: 100%;
   width: auto;
   height: auto;
-  z-index: 1; /* keeps video behind content */
+  z-index: 3; /* keeps video behind content */
   object-fit: cover; /* makes video fill the screen without stretching */
   background-size: cover;
 }
@@ -285,8 +287,8 @@
           <div class="text-6xl md:text-6xl lg:text-7xl xl:text-9xl font-bold leading-tight text-white mobile-title gradient-wave" id="animatedTitle"></div>
           
           <p class="text-gray-300 text-lg md:text-xl max-w-2xl fade-in-up" style="animation-delay: 1.2s;">
-            Join an exclusive community of film industry professionals, creators, and visionaries shaping the future of entertainment.
-          </p>
+              Not everyone gets in. An invite-only app for film professionals, creators, and visionaries where the best opportunities and collaborations are already happening.         
+         </p>
           
           <div class="flex flex-col sm:flex-row gap-6 mt-8 fade-in-up" style="animation-delay: 1.5s;">
             <div class="flex items-center gap-3">
@@ -315,14 +317,14 @@
               <label class="block text-gray-300 text-sm font-semibold mb-3" for="fullName">Full Name</label>
               <input id="fullName" name="fullName" type="text" required
                      class="creative-input w-full px-4 py-4 bg-gray-800/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
-                     placeholder="Enter your full name" />
+                     placeholder="Enter your name" />
             </div>
 
             <div>
               <label class="block text-gray-300 text-sm font-semibold mb-3" for="email">Email Address</label>
               <input id="email" name="email" type="email" required
                      class="creative-input w-full px-4 py-4 bg-gray-800/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
-                     placeholder="your.email@example.com" />
+                     placeholder="your.email@example.com or mobile number" />
             </div>
 
             <div>
@@ -331,21 +333,49 @@
                       class="creative-select w-full px-4 py-4 bg-gray-800/50 border border-gray-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm">
                 <option value="">Select your role</option>
                 <option>Designer</option>
-                <option>Filmmaker</option>
-                <option>Artist</option>
-                <option>Photographer</option>
-                <option>Animator</option>
-                <option>Writer</option>
-                <option>Musician</option>
-                <option>Actor</option>
-                <option>Creative Director</option>
-                <option>Art Director</option>
-                <option>Copywriter</option>
-                <option>Illustrator</option>
-                <option>Video Editor</option>
-                <option>Sound Designer</option>
-                <option>Game Developer</option>
-                <option>Other</option>
+              <option>Filmmaker</option>
+              <option>Director</option>
+              <option>AD</option>
+              <option>Producer</option>
+              <option>Executive Producer</option>
+              <option>Line Producer</option>
+              <option>Writer</option>
+              <option>Screenwriter</option>
+              <option>Actor</option>
+              <option>Playback Singer</option>
+              <option>Voice Artist</option>
+              <option>Casting Director</option>
+              <option>Junior Coordinator</option>
+              <option>Cinematographer</option>
+              <option>AC</option>
+              <option>Gaffer</option>
+              <option>Art Director</option>
+              <option>Production Designer</option>
+              <option>Art Associate</option>
+              <option>Stylist</option>
+              <option>Costume Designer</option>
+              <option>Makeup Artist</option>
+              <option>Hairdresser</option>
+              <option>Music Director</option>
+              <option>Composer</option>
+              <option>Sound Engineer</option>
+              <option>Dubbing Engineer</option>
+              <option>Creative Director</option>
+              <option>Audiographer</option>
+              <option>Choreographer</option>
+              <option>Fight Master</option>
+              <option>Stunt Assistant</option>
+              <option>Editor</option>
+              <option>DI</option>
+              <option>VFX</option>
+              <option>Post Production</option>
+              <option>PRO</option>
+              <option>Digital Marketing</option>
+              <option>Marketing Head</option>
+              <option>Distributor</option>
+              <option>Manager</option>
+              <option>Film Aspirant</option>
+              <option>Others</option>
               </select>
             </div>
 
@@ -353,7 +383,7 @@
               <label class="block text-gray-300 text-sm font-semibold mb-3" for="location">Location</label>
               <input id="location" name="location" type="text" required
                      class="creative-input w-full px-4 py-4 bg-gray-800/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
-                     placeholder="City" />
+                     placeholder="Place" />
             </div>
 
             <button id="submitBtn" type="submit"
@@ -413,7 +443,7 @@ function animateTitle(text) {
   
   text.split(' ').forEach((word, wordIndex) => {
     const wordSpan = document.createElement('span');
-    wordSpan.className = 'inline-block mr-6';
+    wordSpan.className = 'inline-block mr-6 gradient-wave';
     
     // Make "here" italic with special styling
     if (word.toLowerCase() === 'here') {
