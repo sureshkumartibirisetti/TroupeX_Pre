@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Next Big Break - Join the Waitlist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .letter-animate {
+            opacity: 0;
+            animation: letterDrop 0.6s ease-out forwards;
+        }
+        
+        @keyframes letterDrop {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px) rotateX(90deg);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) rotateX(0deg);
+            }
+        }
+        
+        .glow-blue {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #000000 0%, #1e3a8a 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+        
+        .pulse-blue {
+            animation: pulse-blue 2s infinite;
+        }
+        
+        @keyframes pulse-blue {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+            }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #3b82f6;
+            animation: blink 1s step-end infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { border-color: #3b82f6; }
+            51%, 100% { border-color: transparent; }
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 1s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-black text-white min-h-screen overflow-x-hidden">
+    <div class="gradient-bg min-h-screen">
+        <!-- Main Container -->
+        <div class="container mx-auto px-4 py-8 min-h-screen flex flex-col lg:flex-row items-center justify-between">
+            <!-- Left Side - Hero Text -->
+            <div class="w-full lg:w-1/2 mb-12 lg:mb-0">
+                <div class="space-y-6">
+                    <!-- Animated Title -->
+                    <div class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+                        <div id="animated-text" class="text-blue-300"></div>
+                    </div>
+                    
+                    <!-- Subtitle -->
+                    <p class="text-gray-300 text-lg md:text-xl max-w-2xl fade-in-up" style="animation-delay: 3s; animation-fill-mode: both;">
+                        Join an exclusive community of film industry professionals, creators, and visionaries.
+                    </p>
+                    
+                    <!-- Features -->
+                    <div class="flex flex-col sm:flex-row gap-6 mt-8 fade-in-up" style="animation-delay: 3.5s; animation-fill-mode: both;">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-gray-300">Early access guaranteed</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-gray-300">No spam, ever</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Side - Form -->
+            <div class="w-full lg:w-1/2 lg:pl-12">
+                <div class="bg-gray-900 bg-opacity-80 backdrop-blur-sm rounded-2xl p-8 shadow-2xl card-hover slide-in-right border border-gray-800">
+                    <!-- Form -->
+                    <form id="waitlistForm" class="space-y-6">
+                        <div>
+                            <label class="block text-gray-300 text-sm font-medium mb-2">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" required
+                                class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
+                                placeholder="Enter your full name">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-300 text-sm font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
+                                placeholder="your.email@example.com">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-300 text-sm font-medium mb-2">Role</label>
+                            <select id="role" name="role" required
+                                class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200">
+                                <option value="">Select your role</option>
+                                <option value="Designer">Designer (UI/UX, Graphic, Product)</option>
+                                <option value="Filmmaker">Filmmaker (Director, Producer, Editor)</option>
+                                <option value="Artist">Artist (Painter, Sculptor, Digital)</option>
+                                <option value="Photographer">Photographer (Portrait, Commercial, Fine Art)</option>
+                                <option value="Animator">Animator (2D, 3D, Motion Graphics)</option>
+                                <option value="Writer">Writer (Screenwriter, Content, Creative)</option>
+                                <option value="Musician">Musician (Composer, Producer, Performer)</option>
+                                <option value="Actor">Actor (Film, Theater, Voice)</option>
+                                <option value="Creative Director">Creative Director</option>
+                                <option value="Art Director">Art Director</option>
+                                <option value="Copywriter">Copywriter</option>
+                                <option value="Illustrator">Illustrator</option>
+                                <option value="Video Editor">Video Editor</option>
+                                <option value="Sound Designer">Sound Designer</option>
+                                <option value="Game Developer">Game Developer</option>
+                                <option value="Other">Other Creative Professional</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-300 text-sm font-medium mb-2">Location</label>
+                            <input type="text" id="location" name="location" required
+                                class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
+                                placeholder="City, Country">
+                        </div>
+                        
+                        <button type="submit" id="submitBtn"
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-lg transition duration-200 transform hover:scale-105 pulse-blue">
+                            Join the Waitlist
+                        </button>
+                    </form>
+                    
+                    <!-- Thank You Card (Hidden Initially) -->
+                    <div id="thankYouCard" class="hidden text-center py-12">
+                        <div class="text-6xl mb-4">🎉</div>
+                        <h2 class="text-2xl font-bold text-blue-400 mb-4">Thank you!</h2>
+                        <p class="text-gray-300 text-lg">We will get back to you shortly!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Member Statistics -->
+        <div class="container mx-auto px-4 pb-12">
+            <div class="bg-gray-900 bg-opacity-60 backdrop-blur-sm rounded-2xl p-8 border border-gray-800 fade-in-up" style="animation-delay: 4s; animation-fill-mode: both;">
+                <h3 class="text-xl font-semibold text-blue-400 mb-6 text-center">Join the Creative Community</h3>
+                <div id="memberStats" class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="space-y-2">
+                        <div class="text-3xl font-bold text-white" id="totalMembers">0</div>
+                        <div class="text-gray-400 text-sm">Total Members</div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-3xl font-bold text-blue-400" id="designers">0</div>
+                        <div class="text-gray-400 text-sm">Designers</div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-3xl font-bold text-blue-400" id="artists">0</div>
+                        <div class="text-gray-400 text-sm">Artists</div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-3xl font-bold text-blue-400" id="filmmakers">0</div>
+                        <div class="text-gray-400 text-sm">Filmmakers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+const CONFIG = {
+    GOOGLE_APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbzqbdsoOLTYOanIs9SQV5pnN9Q9bSg-0j7V28W8HWYzBJDlQ_DkQiyQR6OUcENgO9GY1Q/exec', // Replace with your actual URL
+    ANIMATION_DELAY: 150, // milliseconds between each letter
+};
+
+// Member statistics (this will be updated from Google Sheets)
+let memberStats = {
+    total: 29,
+    Designer: 5,
+    Artist: 2,
+    Filmmaker: 4,
+    Photographer: 5,
+    Animator: 4,
+    Writer: 567,
+    Musician: 1,
+    Actor: 1,
+    'Creative Director': 1,
+    'Art Director': 1,
+    Copywriter: 1,
+    Illustrator: 1,
+    'Video Editor': 1,
+    'Sound Designer': 1,
+    'Game Developer': 1,
+    Other: 2
+};
+
+// Initialize the page
+document.addEventListener('DOMContentLoaded', function() {
+    animateTitle();
+    updateMemberStats();
+    initializeForm();
+    loadMemberData();
+});
+
+// Animate title letter by letter
+function animateTitle() {
+    const text = "Your next big break is here";
+    const container = document.getElementById('animated-text');
+    container.innerHTML = '';
+    
+    const words = text.split(' ');
+    let letterIndex = 0;
+    
+    words.forEach((word, wordIndex) => {
+        const wordSpan = document.createElement('span');
+        wordSpan.className = 'inline-block mr-4 mb-2';
+        
+        word.split('').forEach((letter, index) => {
+            const span = document.createElement('span');
+            span.textContent = letter;
+            span.className = 'letter-animate inline-block';
+            span.style.animationDelay = `${letterIndex * CONFIG.ANIMATION_DELAY}ms`;
+            wordSpan.appendChild(span);
+            letterIndex++;
+        });
+        
+        container.appendChild(wordSpan);
+    });
+}
+
+// Initialize form handling
+function initializeForm() {
+    const form = document.getElementById('waitlistForm');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = {
+            fullName: document.getElementById('fullName').value,
+            email: document.getElementById('email').value,
+            role: document.getElementById('role').value,
+            location: document.getElementById('location').value,
+            timestamp: new Date().toISOString()
+        };
+        
+        // Validate form
+        if (!validateForm(formData)) {
+            return;
+        }
+        
+        // Show loading state
+        submitBtn.innerHTML = 'Joining...';
+        submitBtn.disabled = true;
+        
+        try {
+            // Submit to Google Sheets
+            await submitToGoogleSheets(formData);
+            
+            // Show thank you message
+            showThankYouMessage();
+            
+            // Update member stats
+            updateStatsAfterSubmission(formData.role);
+            
+        } catch (error) {
+            console.error('Submission error:', error);
+            alert('Something went wrong. Please try again.');
+            
+            // Reset button
+            submitBtn.innerHTML = 'Join the Waitlist';
+            submitBtn.disabled = false;
+        }
+    });
+}
+
+// Validate form data
+function validateForm(data) {
+    const { fullName, email, role, location } = data;
+    
+    if (!fullName.trim()) {
+        alert('Please enter your full name');
+        return false;
+    }
+    
+    if (!isValidEmail(email)) {
+        alert('Please enter a valid email address');
+        return false;
+    }
+    
+    if (!role) {
+        alert('Please select your role');
+        return false;
+    }
+    
+    if (!location.trim()) {
+        alert('Please enter your location');
+        return false;
+    }
+    
+    return true;
+}
+
+// Validate email format
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Submit data to Google Sheets
+async function submitToGoogleSheets(data) {
+    const response = await fetch(CONFIG.GOOGLE_APPS_SCRIPT_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    });
+    const result = await response.json(); // parse JSON response
+    console.log('Backend response:', result);
+
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+
+    return result;
+}
+
+
+// Show thank you message
+function showThankYouMessage() {
+    const form = document.getElementById('waitlistForm');
+    const thankYouCard = document.getElementById('thankYouCard');
+    
+    form.style.display = 'none';
+    thankYouCard.classList.remove('hidden');
+    thankYouCard.classList.add('fade-in-up');
+}
+
+// Update member statistics
+function updateMemberStats() {
+    document.getElementById('totalMembers').textContent = memberStats.total.toLocaleString();
+    document.getElementById('designers').textContent = memberStats.Designer.toLocaleString();
+    document.getElementById('artists').textContent = memberStats.Artist.toLocaleString();
+    document.getElementById('filmmakers').textContent = memberStats.Filmmaker.toLocaleString();
+    
+    // Animate the numbers
+    animateNumbers();
+}
+
+// Animate numbers counting up
+function animateNumbers() {
+    const counters = ['totalMembers', 'designers', 'artists', 'filmmakers'];
+    
+    counters.forEach(counterId => {
+        const element = document.getElementById(counterId);
+        const target = parseInt(element.textContent.replace(/,/g, ''));
+        const duration = 2000; // 2 seconds
+        const increment = target / (duration / 16); // 60 FPS
+        let current = 0;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            element.textContent = Math.floor(current).toLocaleString();
+        }, 16);
+    });
+}
+
+// Update stats after new submission
+function updateStatsAfterSubmission(role) {
+    memberStats.total++;
+    if (memberStats[role]) {
+        memberStats[role]++;
+    }
+    updateMemberStats();
+}
+
+// Load member data from Google Sheets (optional)
+async function loadMemberData() {
+    try {
+        // This would fetch current stats from Google Sheets
+        // For now, we'll use the mock data above
+        console.log('Member data loaded');
+    } catch (error) {
+        console.error('Error loading member data:', error);
+    }
+}
+
+// Add some interactive effects
+document.addEventListener('mousemove', function(e) {
+    const cursor = document.createElement('div');
+    cursor.className = 'fixed w-1 h-1 bg-blue-500 rounded-full pointer-events-none z-50 opacity-50';
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    document.body.appendChild(cursor);
+    
+    setTimeout(() => {
+        cursor.remove();
+    }, 500);
+});
+
+// Add smooth scrolling for mobile
+document.documentElement.style.scrollBehavior = 'smooth';
+
+// Handle form input animations
+document.querySelectorAll('input, select').forEach(input => {
+    input.addEventListener('focus', function() {
+        this.parentElement.classList.add('scale-105', 'transition-transform');
+    });
+    
+    input.addEventListener('blur', function() {
+        this.parentElement.classList.remove('scale-105');
+    });
+});
+
+// Add loading animation for submit button
+function showLoadingAnimation() {
+    const button = document.getElementById('submitBtn');
+    button.innerHTML = `
+        <div class="flex items-center justify-center">
+            <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+            Joining...
+        </div>
+    `;
+}
+
+console.log('🎬 Creative Community Waitlist - Ready to launch!');
+    </script>
+</body>
+</html>
