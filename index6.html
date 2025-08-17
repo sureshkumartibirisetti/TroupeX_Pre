@@ -20,7 +20,7 @@
     }
     
     .animated-gradient-bg {
-      background: linear-gradient(-45deg, #1d1f30, #0d2840, #592361, #64267d, #4b204b, #2b0248);
+      background: linear-gradient(-45deg, #000000, #1a1a1a, #2d2d2d, #1f1f1f, #0d0d0d, #333333);
       background-size: 600% 600%;
       animation: gradientShift 15s ease infinite;
       position: relative;
@@ -32,7 +32,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(-45deg, rgba(0, 212, 255, 0.2), rgba(52, 16, 86, 0.3), rgba(52, 3, 87, 0.2), rgba(21, 46, 61, 0.2));
+      background: linear-gradient(-45deg, rgba(0, 0, 0, 0.3), rgba(64, 64, 64, 0.2), rgba(32, 32, 32, 0.3), rgba(16, 16, 16, 0.2));
       background-size: 600% 600%;
       animation: gradientShift 20s ease infinite reverse;
     }
@@ -43,18 +43,41 @@
       100% { background-position: 0% 50%; }
     }
     
+    /* Main Headline Gradient Animation */
+    #typing-headline {
+      background: linear-gradient(135deg, #ffffff 0%, #9f7aea 50%, #10b981 100%);
+      background-size: 200% 200%;
+      animation: textGradientShift 4s ease infinite;
+      -webkit-background-clip: text;
+      /*-webkit-text-fill-color: transparent;*/
+      background-clip: text;
+      font-size: clamp(2rem, 8vw, 4.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      word-wrap: break-word;
+      hyphens: none;
+      font-weight: bold;
+      text-align: left;
+    }
+    
+    @keyframes textGradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
     .glass-card {
-      background: rgba(15, 15, 15, 0.8);
+      background: rgba(5, 5, 5, 0.9);
       backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6);
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     
     .glass-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 35px 60px rgba(59, 130, 246, 0.2);
-      border-color: rgba(59, 130, 246, 0.3);
+      box-shadow: 0 35px 60px rgba(59, 130, 246, 0.3);
+      border-color: rgba(59, 130, 246, 0.4);
     }
     
     .creative-title-animate {
@@ -75,14 +98,11 @@
     
     .italic-here {
       font-style: italic;
-      color: #71d6ed;
-      background: linear-gradient(75deg, #4763a5, #8541ad, #082a82);
+      background: linear-gradient(45deg, #00d2ff, #8a2be2, #ff6b6b);
       background-clip: text;
       -webkit-background-clip: text;
-      /* color: transparent; */
       animation: colorShift 3s ease-in-out infinite;
-      font-weight: 600;
-      /* text-shadow: 0 0 30px rgba(0, 210, 255, 0.5); */
+      font-weight: 700;
     }
     
     @keyframes colorShift {
@@ -134,7 +154,7 @@
     }
     
     .floating-animation {
-      animation: floating 8s ease-in-out infinite;
+      animation: floating 6s ease-in-out infinite;
     }
     
     @keyframes floating {
@@ -143,8 +163,8 @@
     }
     
     .member-counter {
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
-      border: 1px solid rgba(59, 130, 246, 0.3);
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(32, 32, 32, 0.8));
+      border: 1px solid rgba(255, 255, 255, 0.1);
       position: relative;
       overflow: hidden;
     }
@@ -156,7 +176,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.05), transparent);
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.05), transparent);
       animation: shimmer 3s ease-in-out infinite;
     }
     
@@ -170,7 +190,7 @@
       color: white;
       padding: 4px 12px;
       border-radius: 20px;
-      font-size: 1rem;
+      font-size: 0.75rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -197,15 +217,23 @@
       .mobile-form {
         padding: 1.5rem;
       }
+      
+      #typing-headline {
+        font-size: clamp(1.8rem, 7vw, 3.5rem) !important;
+      }
     }
     
     @media (max-width: 480px) {
       .mobile-title {
-        font-size: 3.5rem !important;
+        font-size: 2.5rem !important;
       }
       
       .mobile-form {
         padding: 1rem;
+      }
+      
+      #typing-headline {
+        font-size: clamp(1.5rem, 6vw, 2.8rem) !important;
       }
     }
     
@@ -213,49 +241,25 @@
     .creative-input {
       transition: all 0.3s ease;
       position: relative;
+      background: rgba(0, 0, 0, 0.7) !important;
     }
     
     .creative-input:focus {
       transform: translateY(-2px);
       box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+      background: rgba(0, 0, 0, 0.8) !important;
     }
     
     .creative-select {
       transition: all 0.3s ease;
+      background: rgba(0, 0, 0, 0.7) !important;
     }
     
     .creative-select:focus {
       transform: translateY(-2px);
       box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+      background: rgba(0, 0, 0, 0.8) !important;
     }
-    .gradient-wave {
-    background: linear-gradient(
-      270deg,
-      #6b97ff,
-      #7b329c,
-      #48dbfb,
-      #aa1dd1,
-      #5f27cd
-    );
-    background-size: 800% 800%;
-    -webkit-background-clip: text;
-    
-    background-clip: text;
-    color: transparent;
-    animation: waveGradient 8s ease infinite;
-  }
-
-  @keyframes waveGradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
   </style>
 </head>
 <body class="text-white min-h-screen">
@@ -265,7 +269,7 @@
       <!-- Left: Hero Section -->
       <div class="w-full lg:w-1/2 mb-12 lg:mb-0 floating-animation">
         <div class="space-y-8">
-          <div class="text-6xl md:text-6xl lg:text-7xl xl:text-9xl font-bold leading-tight text-white mobile-title gradient-wave" id="animatedTitle"></div>
+          <div class="mobile-title" id="typing-headline"></div>
           
           <p class="text-gray-300 text-lg md:text-xl max-w-2xl fade-in-up" style="animation-delay: 1.2s;">
             Join an exclusive community of film industry professionals, creators, and visionaries shaping the future of entertainment.
@@ -276,8 +280,8 @@
               <div class="w-3 h-3 bg-blue-500 rounded-full animate-ping"></div>
               <span class="text-gray-300 font-medium">Early access guaranteed</span>
             </div>
-            <div class="flex items-center gap-3" >
-              <div class="w-3 h-3 bg-blue-500 rounded-full animate-ping"></div>
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
               <span class="text-gray-300 font-medium">No spam, ever</span>
             </div>
           </div>
@@ -297,21 +301,21 @@
             <div>
               <label class="block text-gray-300 text-sm font-semibold mb-3" for="fullName">Full Name</label>
               <input id="fullName" name="fullName" type="text" required
-                     class="creative-input w-full px-4 py-4 bg-gray-800/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
+                     class="creative-input w-full px-4 py-4 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
                      placeholder="Enter your full name" />
             </div>
 
             <div>
               <label class="block text-gray-300 text-sm font-semibold mb-3" for="email">Email Address</label>
               <input id="email" name="email" type="email" required
-                     class="creative-input w-full px-4 py-4 bg-gray-800/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
+                     class="creative-input w-full px-4 py-4 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
                      placeholder="your.email@example.com" />
             </div>
 
             <div>
               <label class="block text-gray-300 text-sm font-semibold mb-3" for="role">Role</label>
               <select id="role" name="role" required
-                      class="creative-select w-full px-4 py-4 bg-gray-800/50 border border-gray-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm">
+                      class="creative-select w-full px-4 py-4 border border-gray-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm">
                 <option value="">Select your role</option>
                 <option>Designer</option>
                 <option>Filmmaker</option>
@@ -335,7 +339,7 @@
             <div>
               <label class="block text-gray-300 text-sm font-semibold mb-3" for="location">Location</label>
               <input id="location" name="location" type="text" required
-                     class="creative-input w-full px-4 py-4 bg-gray-800/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
+                     class="creative-input w-full px-4 py-4 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
                      placeholder="City, Country" />
             </div>
 
@@ -349,7 +353,7 @@
           <div id="thankYou" class="hidden text-center py-12">
             <div class="text-6xl mb-6 animate-bounce">🎉</div>
             <h2 class="text-3xl font-bold text-blue-400 mb-4">Thank you!</h2>
-            <p class="text-gray-300 text-lg">You're now part of something amazing. We will get back to you shortly! !</p>
+            <p class="text-gray-300 text-lg">You're now part of something amazing. We will get back to you shortly! !</p>
           </div>
         </div>
       </div>
@@ -358,7 +362,7 @@
     <!-- Creative Community Stats -->
     <div class="container mx-auto px-4 pb-16 mobile-optimized relative z-10">
       <div class="member-counter backdrop-blur-sm rounded-3xl p-8 text-center max-w-md mx-auto">
-        <h3 class="text-xl font-bold text-black-400 mb-6">Join the Creative Community</h3>
+        <h3 class="text-xl font-bold text-blue-400 mb-6">Join the Creative Community</h3>
         <div class="space-y-4">
           <div class="text-5xl md:text-6xl font-black text-white" id="totalMembers">1251+</div>
           <div class="text-gray-400 text-lg font-medium">Creative Community</div>
@@ -390,7 +394,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /** Enhanced title animation with italic "here" */
 function animateTitle(text) {
-  const el = document.getElementById('animatedTitle');
+  const el = document.getElementById('typing-headline');
   el.innerHTML = '';
   let i = 0;
   
@@ -484,7 +488,7 @@ function setLoading(btn, loading) {
       </div>`;
   } else {
     btn.disabled = false;
-    btn.innerHTML = '🚀 Join the Waitlist';
+    btn.innerHTML = 'Request Invitation';
   }
 }
 
